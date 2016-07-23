@@ -45,47 +45,47 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 	switch ($monitor['status']) {
 		// paused
 	    case "0":
-	    	$statusText = _("Paused");
+	    	$statusText = "Paused";
 	        break;
 		// not checked yet
 	    case "1":
-	    	$statusText = _("Not checked yet");
+	    	$statusText = "Not checked yet";
 	        break;
 		// up
 	    case "2":
-	    	$statusText = _("Online");
+	    	$statusText = "Online";
 	        break;
 		// seems down
 	    case "8":
-	    	$statusText = _("Seems down");
+	    	$statusText = "Seems down";
 	        break;
 		// down
 	    case "9":
-	    	$statusText = _("DOWN");
+	    	$statusText = "DOWN";
 	        break;
 	}
 	echo "<h2>".$monitor['friendlyname']."</h2>";
 	echo "<p>Status: <b>".$statusText."</b></p>";
 	
-	echo "<h3>"._("Uptime")."</h3>";
+	echo "<h3>Uptime</h3>";
 	?>
 	<div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $monitor['customuptimeratio']; ?>" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $monitor['customuptimeratio']; ?>%;"><?php echo $monitor['customuptimeratio']; ?>%</div></div>
 	<?php
-	echo "<p>"._("Last 7 days").": <b>".$monitor['customuptimeratio']."%</b><br>";
-	echo _("Alltime").": ".$monitor['alltimeuptimeratio']."% </p>";
+	echo "<p>Last 7 days: <b>".$monitor['customuptimeratio']."%</b><br>";
+	echo "Alltime: ".$monitor['alltimeuptimeratio']."% </p>";
 	
 	if( !empty($monitor['responsetime'][0]['value']) ){
-		echo "<h3>"._("Response Time")."</h3>";
-		echo "<p>"._("Average in last 6 hours").": <b>".$monitor['responsetime'][0]['value']." "._("Milliseconds")."</b>";
+		echo "<h3>Response Time</h3>";
+		echo "<p>Average in last 6 hours: <b>".$monitor['responsetime'][0]['value']." Milliseconds</b>";
 		
 		if( !empty($monitor['responsetime'][1]['value']) ){
-			echo "<br>"._("Average previous 6 hours").": ".$monitor['responsetime'][1]['value']." "._("Milliseconds");
+			echo "<br>Average previous 6 hours: ".$monitor['responsetime'][1]['value']." Milliseconds";
 		}
 		if( !empty($monitor['responsetime'][2]['value']) ){
-			echo "<br>"._("Average previous 6 hours").": ".$monitor['responsetime'][2]['value']." "._("Milliseconds");
+			echo "<br>Average previous 6 hours: ".$monitor['responsetime'][2]['value']." Milliseconds";
 		}
 		if( !empty($monitor['responsetime'][3]['value']) ){
-			echo "<br>"._("Average previous 6 hours").": ".$monitor['responsetime'][3]['value']." "._("Milliseconds");
+			echo "<br>Average previous 6 hours: ".$monitor['responsetime'][3]['value']." Milliseconds";
 		}
 		echo "</p>";
 	}
@@ -100,7 +100,7 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 <div class="footer">
  <hr>
  <p>Pokémon and Pokémon character names are trademarks of Nintendo. Other trademarks are the property of their respective owners.</p>
- <p class="text-center"><?php echo _("Powered by"); ?> <a href="https://uptimerobot.com/" target="_blank">Uptime Robot</a>.</p>
+ <p class="text-center">Powered by <a href="https://uptimerobot.com/" target="_blank">Uptime Robot</a>.</p>
 
 </div>
 </div><!-- /container -->
