@@ -39,38 +39,31 @@ $response = str_replace("jsonUptimeRobotApi(", "", $response);
 $response = substr($response, 0, -1);
 
 $uptime_data = json_decode($response, true);
-var_dump($uptime_data);
 
 foreach($uptime_data['monitors']['monitor'] as $monitor){
-	var_dump($monitor);
 	switch ($monitor['status']) {
 		// paused
 	    case "0":
-	    	$emoji = "⏸";
 	    	$statusText = _("Paused");
 	        break;
 		// not checked yet
 	    case "1":
-	    	$emoji = "🔄";
 	    	$statusText = _("Not checked yet");
 	        break;
 		// up
 	    case "2":
-	    	$emoji = "✅";
 	    	$statusText = _("Online");
 	        break;
 		// seems down
 	    case "8":
-	    	$emoji = "⭕️";
 	    	$statusText = _("Seems down");
 	        break;
 		// down
 	    case "9":
-	    	$emoji = "🚫";
 	    	$statusText = _("DOWN");
 	        break;
 	}
-	echo "<h2>".$emoji." ".$monitor['friendlyname']."</h2>";
+	echo "<h2>".$monitor['friendlyname']."</h2>";
 	echo "<p>Status: <b>".$statusText."</b></p>";
 	
 	echo "<h3>"._("Uptime")."</h3>";
