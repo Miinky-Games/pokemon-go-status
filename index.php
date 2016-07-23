@@ -34,16 +34,15 @@ curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
 curl_close($ch);
-print_r("res ".$response);
 
 $response = str_replace("jsonUptimeRobotApi(", "", $response);
 $response = substr($response, 0, -1);
 
 $uptime_data = json_decode($response, true);
-
+var_dump($uptime_data);
 
 foreach($uptime_data['monitors']['monitor'] as $monitor){
-	print_r("monitor ".$monitor);
+	var_dump($monitor);
 	switch ($monitor['status']) {
 		// paused
 	    case "0":
