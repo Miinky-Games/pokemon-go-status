@@ -1,4 +1,3 @@
-<?php require("config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +18,7 @@
       </div>
 <?php
 
+// API keys are read-only
 $monitor_keys = array(
 	"m777999387-4c97237abb441b7e1ecfeae6",
 	"m777999393-a3efd5e7bfdf2c23a000e2c6",
